@@ -1,6 +1,6 @@
 name = input('What is your name? ')
 
-print(f"{name} Welcome to the game of Landscaper")
+print(f"{name}, welcome to the game of Landscaper")
 
 life = {'tool': 0, 'money': 0}
 
@@ -24,3 +24,17 @@ def check_store():
           
           Team of Starving Students -- profit: 250, Cost: 500
           """)
+def upgrade():
+    if (life["tool"] >= len(tools) -1):
+        print(" no more upgrades")
+    next_tool = tools[life["tool"] + 1]
+    if (next_tool == None):
+        print("You have the max upgrade")
+        return 0
+    if (life["money"] < next_tool["cost"]):
+        print("Not enough to upgrade")
+        return 0
+    print("You upgraded your service")
+    life["money"] -= next_tool["cost"]
+    life["tool"] += 1
+
