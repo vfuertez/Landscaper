@@ -24,6 +24,7 @@ def check_store():
           
           Team of Starving Students -- profit: 250, Cost: 500
           """)
+    
 def upgrade():
     if (life["tool"] >= len(tools) -1):
         print(" no more upgrades")
@@ -38,3 +39,22 @@ def upgrade():
     life["money"] -= next_tool["cost"]
     life["tool"] += 1
 
+def check_stats():
+    tool = tools[life["tool"]]
+    print(f"You currently have {life['money']} and are using a {tool['x']} ")
+
+def win_check():
+    if(life["tool"] == 4 and life["money"] >= 1000 ):
+        print("You win")
+        return True
+    return False
+
+def check_stats():
+    tool = tools[life["tool"]]
+    print(f"You currently have {life['money']} and are using a {tool['x']} ")
+    
+def win_check():
+    if(life["tool"] == 4 and life["money"] >= 1000 ):
+        print("You win")
+        return True
+    return False
