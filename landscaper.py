@@ -25,6 +25,11 @@ def check_store():
           Team of Starving Students -- profit: 250, Cost: 500
           """)
     
+def landscape():
+    tool = tools[life['tool']]
+    print(f"You landscaped the area with your {tool['x']} and made ${tool['profit']}")
+    life["money"] += tool["profit"]
+    
 def upgrade():
     if (life["tool"] >= len(tools) -1):
         print(" no more upgrades")
@@ -51,10 +56,38 @@ def win_check():
 
 def check_stats():
     tool = tools[life["tool"]]
-    print(f"You currently have {life['money']} and are using a {tool['x']} ")
+    print(f"You currently have ${life['money']} and are using a {tool['x']} ")
     
 def win_check():
     if(life["tool"] == 4 and life["money"] >= 1000 ):
-        print("You win")
+        print("You earned more than a $1000. Time to go home ")
         return True
     return False
+
+while(True):
+    
+    i = input("[1] Work [2] Check Stats [3] Upgrade [4] Check Store [5] Quit ")
+    
+    i = int(i)
+    
+    if(i == 1):
+        landscape()
+        
+    if(i == 2):
+        check_stats()
+        
+    if(i ==3):
+        upgrade()
+        
+    if(i == 4):
+        check_store()
+        
+    elif(i == 5):
+        print(f" {name} you are fired")
+        break
+        
+    if(i >= 6 ):
+        print("choose again")
+        
+    if (win_check()):
+        break
