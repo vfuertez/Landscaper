@@ -12,3 +12,15 @@ tools = [
     {"x": "team of starving students", "profit": 250, "cost": 500},
 ]
 
+def check_store():
+    print("""
+          Teeth -- profit: 1 , Cost: 0
+          
+          Rusty Scissors -- profit: 5,  Cost: 5
+          
+          Lawnmower -- profit: 50, Cost: 25
+          
+          Fancy Lawnmower -- profit, Cost: 250
+          
+          Team of Starving Students -- profit: 250, Cost: 500
+          """)
